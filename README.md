@@ -1,5 +1,5 @@
 💖 An interactive multi-stage Valentine's Week journey. This project takes the user through a series of "Days" (Rose Day, Propose Day, etc.) with aesthetic GIFs, typewriter effects, and romantic quotes. It includes a playful "Do you love me?" lock and a floating heart background. Built with HTML, CSS, and Vanilla JavaScript for a smooth, emotional storytelling experience. 🌹✨
-# 💖 Our Love Journey | Interactive Valentine's Week
+# 💖Interactive Valentine's Week
 
 A beautifully crafted digital experience that celebrates the essence of Valentine's week. This interactive web app takes the user through a romantic journey, starting from a playful interaction to a full week of virtual celebrations.
 
