@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Journey 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blush: #ffb7c5;
+            --pastel-red: #ff6b6b;
+            --cream: #fff5f5;
+            --lavender: #e0d1f0;
+        }
+
+        body, html {
+            margin: 0; padding: 0; min-height: 100vh;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, var(--cream), #ffe4e1);
+            overflow-x: hidden;
+            color: #444;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%23ff6b6b" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'), auto;
+        }
+
+        .heart-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+        .container { position: relative; z-index: 1; max-width: 500px; margin: 0 auto; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+        section {
+            display: none; width: 90%; text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .active { display: flex; flex-direction: column; align-items: center; }
+
+        h1 { font-family: 'Dancing Script', cursive; color: var(--pastel-red); font-size: 2.8rem; margin: 15px 0; }
+        p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; font-weight: 500; }
+        .footer-text { font-style: italic; color: var(--pastel-red); margin-top: 10px; font-weight: bold; }
+
+        .btn {
+            background: white; border: 2px solid var(--blush); padding: 12px 25px; border-radius: 50px;
+            color: var(--pastel-red); font-weight: 600; cursor: pointer; transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin: 10px;
+        }
+        .btn:hover { transform: scale(1.1); background: var(--blush); color: white; animation: heartbeat 0.8s infinite; }
+
+        .gif { width: 220px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-bottom: 20px; }
+
+        #no-btn { position: relative; transition: 0.2s ease-out; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+        .day-counter { position: absolute; top: 20px; right: 20px; font-weight: bold; color: var(--blush); opacity: 0.7; }
+    </style>
+</head>
+<body>
+
+<div class="heart-bg" id="heart-container"></div>
+
+<div class="container">
+    <section id="p1" class="active">
+        <img src="hii.gif" class="gif">
+        <h1 id="typewriter"></h1>
+        <button class="btn" onclick="nextPage('p2')">💗 Come closer</button>
+    </section>
+
+    <section id="p2">
+        <p>Before we begin...</p>
+        <h1>Do you love me? 💭</h1>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn" onclick="nextPage('p4')">💕 YES</button>
+            <button class="btn" onmouseover="moveNo()" onclick="nextPage('p3')">🙄 NO</button>
+        </div>
+    </section>
+
+    <section id="p3">
+        <img src="cry.gif" class="gif">
+        <h1>HOW DARE YOU 😤</h1>
+        <p>Try again, sweetie.</p>
+        <button class="btn" onclick="nextPage('p2')">🔄 Try again</button>
+    </section>
+
+    <section id="p4">
+        <img src="download.gif" class="gif">
+        <h1>Hehe... I knew it 😌</h1>
+        <p>Now you’re officially stuck with me.</p>
+        <button class="btn" onclick="nextPage('p5')">➡️ Let's start Valentine Week</button>
+    </section>
+
+    <section id="p5">
+        <div class="day-counter"></div>
+        <h1>🌹 Fool for my Phool</h1>
+        <img src="phool.gif" class="gif">
+        <p>“If love had a fragrance, it would smell like you.”</p>
+        <p class="footer-text">Happy Rose Day 💐</p>
+        <button class="btn" onclick="nextPage('p6')">Next →</button>
+    </section>
+
+    <section id="p6">
+        <div class="day-counter"></div>
+        <h1>💍 Officially mine?</h1>
+        <img src="pr.gif" class="gif">
+        <p>“No fancy words. No dramatic speech. Just me asking— Will you be mine forever?”</p>
+        <p class="footer-text">Happy Propose Day 💖</p>
+        <button class="btn" onclick="nextPage('p7')">Next →</button>
+    </section>
+
+    <section id="p7">
+        <div class="day-counter"></div>
+        <h1>🧸 If I were a teddy...</h1>
+        <img src="img4.gif" class="gif">
+        <p>“I’d stay with you all night. Listen to your silence. And never let you feel alone.”</p>
+        <p class="footer-text">Happy Teddy Day 🧸</p>
+        <button class="btn" onclick="nextPage('p8')">Next →</button>
+    </section>
+
+    <section id="p8">
+        <div class="day-counter"></div>
+        <h1>🤗 This is a virtual hug</h1>
+        <img src="img3.gif" class="gif">
+        <p>“Whenever life feels heavy, remember— this hug is always waiting for you.”</p>
+        <p class="footer-text">Happy Hug Day 🤍</p>
+        <button class="btn" onclick="nextPage('p9')">Next →</button>
+    </section>
+
+    <section id="p9">
+        <div class="day-counter"></div>
+        <h1>😘 One kiss, no noise</h1>
+        <img src="img8.gif" class="gif">
+        <p>“Not loud. Not rushed. Just a kiss that says— I choose you. Always.”</p>
+        <p class="footer-text">Happy Kiss Day 💋</p>
+        <button class="btn" onclick="nextPage('p10')">Next →</button>
+    </section>
+
+    <section id="p10">
+        <h1>❤️ Happy Valentine’s Day</h1>
+        <img src="download (36).jpg" class="gif">
+        <p>“In a world full of temporary people, I found you. And that’s my favourite love story.”</p>
+        <p class="footer-text">“Thank you for existing.” ✨</p>
+    </section>
+</div>
+
+<script>
+    // Typing Effect
+    const introText = "I have something special for you...";
+    let charIdx = 0;
+    function type() {
+        if (charIdx < introText.length) {
+            document.getElementById("typewriter").innerHTML += introText.charAt(charIdx);
+            charIdx++; setTimeout(type, 100);
+        }
+    }
+    window.onload = type;
+
+    // Navigation
+    function nextPage(id) {
+        document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+
+    // Runaway No Button
+    function moveNo() {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 100);
+        const btn = document.getElementById('no-btn');
+        btn.style.position = 'fixed';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+    }
+
+    // Heart Animation
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.innerHTML = '💗';
+        heart.style.position = 'fixed';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.bottom = '-5vh';
+        heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+        heart.style.opacity = Math.random();
+        heart.style.transition = 'transform 6s linear, opacity 6s';
+        document.getElementById('heart-container').appendChild(heart);
+        setTimeout(() => {
+            heart.style.transform = `translateY(-110vh) rotate(${Math.random() * 360}deg)`;
+            heart.style.opacity = '0';
+        }, 100);
+        setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 300);
+</script>
+</body>
+</html>
